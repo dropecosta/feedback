@@ -21,12 +21,30 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, onChange }) => {
     onChange(index);
   };
 
+  const getRatingText = (rating: number): string => {
+    switch (rating) {
+      case 1:
+        return 'Muito má';
+      case 2:
+        return 'Má';
+      case 3:
+        return 'Regular';
+      case 4:
+        return 'Boa';
+      case 5:
+        return 'Muito boa';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div>
       {[...Array(5)].map((_, index) => {
         const starNumber = index + 1;
         return (
           <span
+          className='star'
             key={index}
             style={{ cursor: "pointer" }}
             onMouseOver={() => handleMouseOver(starNumber)}
@@ -37,6 +55,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, onChange }) => {
           </span>
         );
       })}
+      <div className="rating-legend">{getRatingText(rating)}</div>
     </div>
   );
 };
