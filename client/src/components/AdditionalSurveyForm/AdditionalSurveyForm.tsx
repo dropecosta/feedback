@@ -9,24 +9,11 @@ const AdditionalSurveyForm = () => {
   const [rating2, setRating2] = useState(0);
   const [rating3, setRating3] = useState(0);
   const [lastUpdateAvailable, setLastUpdateAvailable] = useState<string[]>([]);
-  const [authorityResponsibleAvailable, setAuthorityResponsibleAvailable] =
-    useState<string[]>([]);
-  const [legislationReferences, setLegislationReferences] = useState<string[]>(
-    []
-  );
-  const [informationInEnglish, setInformationInEnglish] = useState<string[]>(
-    []
-  );
+  const [authorityResponsibleAvailable, setAuthorityResponsibleAvailable] = useState<string[]>([]);
+  const [legislationReferences, setLegislationReferences] = useState<string[]>([]);
+  const [informationInEnglish, setInformationInEnglish] = useState<string[]>([]);
 
-  const handleLastUpdateAvailable = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    console.log("value", value);
-    if (lastUpdateAvailable.includes(value)) {
-      setLastUpdateAvailable([value]);
-    } else {
-      setLastUpdateAvailable([...lastUpdateAvailable, value]);
-    }
-  };
+  
 
   const handleRatingChange1 = (newRating: number) => {
     setRating1(newRating);
@@ -38,6 +25,13 @@ const AdditionalSurveyForm = () => {
 
   const handleRatingChange3 = (newRating: number) => {
     setRating3(newRating);
+  };
+
+  
+  const handleLastUpdateAvailable = (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    setLastUpdateAvailable([e.target.value]);
   };
 
   const handleAuthorityResponsibleAvailable = (
@@ -59,10 +53,10 @@ const AdditionalSurveyForm = () => {
   ) => {
     event.preventDefault();
     const formData = {
-      lastUpdateAvailable,
       rating1,
       rating2,
       rating3,
+      lastUpdateAvailable,
       authorityResponsibleAvailable,
       legislationReferences,
       informationInEnglish,
