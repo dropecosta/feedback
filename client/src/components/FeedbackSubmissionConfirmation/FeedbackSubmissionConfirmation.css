@@ -1,3 +1,8 @@
+.icon-detail-chat {
+  transform: scaleX(-1);
+  margin-bottom: 8px;
+}
+
 .feedback-confirmation-title {
     font-family: "Noto Sans";
     font-size: 24px;

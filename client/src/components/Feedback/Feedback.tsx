@@ -13,6 +13,9 @@ const Feedback: React.FC = () => {
   const [negativeFeedback, setNegativeFeedback] = useState<boolean>(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
+  console.log('positiveFeedback', positiveFeedback)
+  console.log('negativeFeedback', negativeFeedback)
+
   const handleFoundWhatYouSearchedFor = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (foundWhatYouSearchedFor.includes(value)) {
@@ -60,16 +63,14 @@ const Feedback: React.FC = () => {
     }
   };
 
-  const handleButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
-    const buttonValue = (event.target as HTMLButtonElement).innerText;
-    setAccordionOpen(true);
-    if (buttonValue === "Sim") {
-      setPositiveFeedback(true);
-      setNegativeFeedback(false);
-    } else {
-      setPositiveFeedback(false);
-      setNegativeFeedback(true);
-    }
+  const handlePositiveFeedbackClick = () => {
+    setPositiveFeedback(true);
+    setNegativeFeedback(false);
+  };
+  
+  const handleNegativeFeedbackClick = () => {
+    setPositiveFeedback(false);
+    setNegativeFeedback(true);
   };
 
   return (
@@ -88,7 +89,7 @@ const Feedback: React.FC = () => {
             leadingIcon="agora-line-thumbs-up"
             leadingIconHover="agora-line-thumbs-up"
             variant="success"
-            onClick={handleButtonClick}
+            onClick={handlePositiveFeedbackClick}
           >
             Sim
           </Button>
@@ -99,7 +100,7 @@ const Feedback: React.FC = () => {
             leadingIcon="agora-line-thumbs-down"
             leadingIconHover="agora-line-thumbs-down"
             variant="danger"
-            onClick={handleButtonClick}
+            onClick={handleNegativeFeedbackClick}
           >
             Não
           </Button>

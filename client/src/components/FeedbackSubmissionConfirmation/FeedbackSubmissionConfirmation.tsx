@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Detail from "../../assets/Detail.svg";
 import YourEurope from "../../assets/your-europe.png";
 import "./FeedbackSubmissionConfirmation.css";
-import { Button, Icon } from "@ama-pt/agora-design-system";
+import { Button, Icon, Scribbles } from "@ama-pt/agora-design-system";
 import AdditionalSurveyForm from "../AdditionalSurveyForm";
 
 export default function FeedbackSubmissionConfirmation() {
@@ -13,7 +12,11 @@ export default function FeedbackSubmissionConfirmation() {
     <div>
       {!showAdditionalForm && (
         <>
-          <img src={Detail} alt="Detalhe" className="detail-svg" />
+          <Scribbles
+            aria-hidden
+            name="agora-detail-chat"
+            className="icon-detail-chat"
+          />
           <h1 className="feedback-confirmation-title">
             Obrigado pela sua <span>opinião!</span>
           </h1>

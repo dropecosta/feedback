@@ -28,15 +28,11 @@ const AdditionalSurveyForm = () => {
   };
 
   
-  const handleLastUpdateAvailable = (
-    e: ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleLastUpdateAvailable = (e: ChangeEvent<HTMLInputElement>) => {
     setLastUpdateAvailable([e.target.value]);
   };
 
-  const handleAuthorityResponsibleAvailable = (
-    e: ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleAuthorityResponsibleAvailable = (e: ChangeEvent<HTMLInputElement>) => {
     setAuthorityResponsibleAvailable([e.target.value]);
   };
 
