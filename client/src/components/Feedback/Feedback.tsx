@@ -1,16 +1,13 @@
 import React, { useState, ChangeEvent, MouseEvent } from "react";
 import StarRating from "../Rating";
-import { Button, Icon } from "@ama-pt/agora-design-system";
+import { Button, Icon, InputTextArea, RadioButton } from "@ama-pt/agora-design-system";
 import "@ama-pt/agora-design-system/dist/index.css";
 import FeedbackSubmissionConfirmation from "../FeedbackSubmissionConfirmation";
 
 const Feedback: React.FC = () => {
-  const [foundWhatYouSearchedFor, setFoundWhatYouSearchedFor] = useState<
-    string[]
-  >([]);
+  const [foundWhatYouSearchedFor, setFoundWhatYouSearchedFor] = useState<string[]>([]);
   const [rating, setRating] = useState<number>(0);
-  const [feedbackText, setFeedbackText] = useState<string>("");
-  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [feedbackText, setFeedbackText] = useState<string>('');
   const [accordionOpen, setAccordionOpen] = useState<boolean>(false);
   const [positiveFeedback, setPositiveFeedback] = useState<boolean>(false);
   const [negativeFeedback, setNegativeFeedback] = useState<boolean>(false);
@@ -19,9 +16,7 @@ const Feedback: React.FC = () => {
   const handleFoundWhatYouSearchedFor = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (foundWhatYouSearchedFor.includes(value)) {
-      setFoundWhatYouSearchedFor(
-        foundWhatYouSearchedFor.filter((item) => item !== value)
-      );
+      setFoundWhatYouSearchedFor([value]);
     } else {
       setFoundWhatYouSearchedFor([...foundWhatYouSearchedFor, value]);
     }
@@ -68,7 +63,6 @@ const Feedback: React.FC = () => {
   const handleButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
     const buttonValue = (event.target as HTMLButtonElement).innerText;
     setAccordionOpen(true);
-    setSubmitted(false);
     if (buttonValue === "Sim") {
       setPositiveFeedback(true);
       setNegativeFeedback(false);
@@ -121,33 +115,36 @@ const Feedback: React.FC = () => {
         {accordionOpen && (
           <div className={`accordion-content ${accordionOpen ? "active" : ""}`}>
             <p>Encontrou o que procurava?</p>
-            <div className="checkbox-group">
-              <label className="checkbox">
+            <div className="radio-group">
+              <label className="radio">
                 Sim
-                <input
+                <RadioButton
                   type="radio"
                   name="foundWhatYouSearchedFor"
                   value="Sim"
+                  label="Sim"
                   checked={foundWhatYouSearchedFor.includes("Sim")}
                   onChange={handleFoundWhatYouSearchedFor}
                 />
               </label>
-              <label className="checkbox">
+              <label className="radio">
                 Não
-                <input
+                <RadioButton
                   type="radio"
                   name="foundWhatYouSearchedFor"
                   value="Não"
+                  label="Não"
                   checked={foundWhatYouSearchedFor.includes("Não")}
                   onChange={handleFoundWhatYouSearchedFor}
                 />
               </label>
-              <label className="checkbox">
+              <label className="radio">
                 Parcialmente
-                <input
+                <RadioButton
                   type="radio"
                   name="foundWhatYouSearchedFor"
                   value="Parcialmente"
+                  label="Parcialmente"
                   checked={foundWhatYouSearchedFor.includes("Parcialmente")}
                   onChange={handleFoundWhatYouSearchedFor}
                 />
@@ -166,7 +163,7 @@ const Feedback: React.FC = () => {
             </div>
             <div className="feedback-group">
               <label>Em que podemos melhorar nesta página?</label>
-              <textarea
+              <InputTextArea 
                 placeholder="Deixe aqui o seu comentário ou sugestão"
                 className="feedback-text"
                 value={feedbackText}
@@ -195,7 +192,6 @@ const Feedback: React.FC = () => {
             >
               Enviar avaliação
             </Button>
-
           </div>
         )}
 

@@ -1,0 +1,28 @@
+.additional-survey-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    max-width: 592px;
+    margin: 0 auto;
+}
+
+.additional-survey-title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.logo-your-europe {
+    margin-top: 32px;
+    margin-bottom: 58px;
+    width: 112px;
+    height: 32px;
+}
+
+.rating, .radio-group {
+    margin-bottom: 32px;
+}
+

@@ -45,8 +45,6 @@
   .feedback-buttons {
     display: flex;
     gap: 32px;
-
-    
   }
 
   .success-button-clicked {
@@ -104,14 +102,14 @@
   margin-bottom: 10px;
 }
 
-.checkbox-group {
+.radio-group {
   margin: 15px 0;
   display: flex;
   flex-direction: column;
 }
 
-.checkbox {
-  margin-bottom: 10px;
+.radio {
+  color: transparent;
   input[type="radio"] {
     margin-left: 5px;
   }
@@ -151,7 +149,7 @@
 
 .feedback-text {
   display: flex;
-  width: 560px;
+  width: 560px !important;
   height: 106px;
   padding: 16px;
   flex-direction: column;
@@ -190,8 +188,4 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-}
-
-.submit-button:hover {
-  //background-color: #0056b3;
 }
