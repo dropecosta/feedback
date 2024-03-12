@@ -73,6 +73,12 @@ const Feedback: React.FC = () => {
     setNegativeFeedback(true);
   };
 
+  const handleAccordionToggle = () => {
+    if (!accordionOpen) {
+      setAccordionOpen(true);
+    }
+  };
+
   return (
     <form className="feedback-form" onSubmit={handleSubmit}>
       {!showConfirmation ? (<>
@@ -89,7 +95,10 @@ const Feedback: React.FC = () => {
             leadingIcon="agora-line-thumbs-up"
             leadingIconHover="agora-line-thumbs-up"
             variant="success"
-            onClick={handlePositiveFeedbackClick}
+            onClick={() => {
+              handlePositiveFeedbackClick();
+              handleAccordionToggle();
+            }}
           >
             Sim
           </Button>
@@ -100,7 +109,10 @@ const Feedback: React.FC = () => {
             leadingIcon="agora-line-thumbs-down"
             leadingIconHover="agora-line-thumbs-down"
             variant="danger"
-            onClick={handleNegativeFeedbackClick}
+            onClick={() => {
+              handleNegativeFeedbackClick();
+              handleAccordionToggle();
+            }}
           >
             Não
           </Button>
