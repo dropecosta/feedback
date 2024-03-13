@@ -79,8 +79,19 @@ const AdditionalSurveyForm = () => {
     return <AdditionalSurveyConfirmationScreen />;
   }
 
+  const buttonArgs = {
+    children: 'Fechar',
+    hasIcon: true,
+    leadingIcon: 'agora-line-x',
+    leadingIconHover: 'agora-solid-x',
+    onClick: () => window.location.reload()
+  };
+
   return (
     <div className="additional-survey-container">
+      <div className="button-close">
+        <Button {...buttonArgs} appearance="link"/>
+      </div>
       <div className="additional-survey-wrapper">
         <h1 className="additional-survey-title">
           Por favor, diga-nos mais sobre a informação que encontrou.

@@ -6,6 +6,8 @@ import AdditionalSurveyForm from "../AdditionalSurveyForm";
 
 export default function FeedbackSubmissionConfirmation() {
   const [showAdditionalForm, setShowAdditionalForm] = useState(false);
+  
+  // const yourEurope = false;
   const yourEurope = true;
 
   if (showAdditionalForm) {

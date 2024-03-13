@@ -1,7 +1,6 @@
 .additional-survey-container {
   width: 100%;
   background: var(--High-Contrast-White, #fff);
-  padding-top: 64px;
 }
 
 .additional-survey-wrapper {
@@ -12,6 +11,7 @@
   max-width: 592px;
   width: 100%;
   margin: 0 auto;
+  padding-top: 64px;
 }
 
 .additional-survey-title {
@@ -32,6 +32,25 @@
 .rating,
 .radio-group {
   margin-bottom: 32px;
+}
+
+.button-close {
+  margin-bottom: 64px;
+  padding-right: 32px;
+  padding-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  button {
+    color: var(--Neutral-900, #2B363C)
+  }
+
+  svg {
+    fill: var(--Neutral-900, #2B363C);
+  }
+
 }
 
 .submit-button {
