@@ -3,6 +3,7 @@
   padding: 2rem;
   background: var(--Neutral-200, #E1E4EA);
   color: var(--Text-Dark---Neutral-900, #2B363C);
+
 }
 
 .feedback-form {
@@ -10,7 +11,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: white;
+  background: var(--Primary-100, #F2F6FF);
   padding: 64px 112px;
 }
 
@@ -29,7 +30,6 @@
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
-      //line-height: 36px;
     }
 
     p {
@@ -81,7 +81,7 @@
   font-size: 18px;
   transition: background-color 0.6s ease;
   border: 0;
-  background-color: white;
+  background: var(--Primary-100, #F2F6FF) !important;
 }
 
 .accordion-content {
@@ -89,13 +89,11 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s ease-out;
-  background-color: white;
   padding-top: 64px;
 }
 
 .accordion-content.active {
   max-height: 100%;
-  background-color: white;
 }
 
 .label {
@@ -103,13 +101,18 @@
 }
 
 .radio-group {
-  margin: 15px 0;
   display: flex;
   flex-direction: column;
 }
 
+.radio-group-spacer {
+  margin-top: 38px;
+}
+
 .radio {
   color: transparent;
+  height: 44px;
+  margin: 0 0 8px 0;
   input[type="radio"] {
     margin-left: 5px;
   }
@@ -118,27 +121,34 @@
 .rating {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
+  //margin-top: 32px;
+}
 
+.rating-spacer {
+  margin-top: 72px;
 }
 
 .rating-content {
   display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
+  flex-direction: row;
+  padding: 8px 0 0 0;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-
-
 .star {
-  font-size: 32px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   color: #034AD8;
   padding: 4px;
   &:first-child {
     padding-left: 0;
   }
+}
+
+.rating-legend {
+  padding: 8px;
 }
 
 .feedback-group {
@@ -159,6 +169,7 @@
   border: 2px solid var(--Neutral-200, #E1E4EA);
   margin-top: 8px;
   background: var(--High-Contrast-White, #FFF);
+  max-width: 592px;
 }
 
 .feedback-warning {
@@ -179,6 +190,7 @@
   display: flex;
   justify-direction: flex-end;
   color: white;
+  margin-top: 64px;
   padding: 10px 20px;
   gap: 8px;
   font-size: 16px;

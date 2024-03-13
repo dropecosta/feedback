@@ -8,8 +8,12 @@ export default function FeedbackSubmissionConfirmation() {
   const [showAdditionalForm, setShowAdditionalForm] = useState(false);
   const yourEurope = true;
 
+  if (showAdditionalForm) {
+    return <AdditionalSurveyForm />;
+  }
+
   return (
-    <div>
+    <div className="feedback-confirmation-container">
       {!showAdditionalForm && (
         <>
           <Scribbles

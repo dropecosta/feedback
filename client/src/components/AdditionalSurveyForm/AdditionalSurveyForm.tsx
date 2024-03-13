@@ -1,6 +1,7 @@
 import React, { ChangeEvent, MouseEventHandler, useState } from "react";
 import YourEurope from "../../assets/your-europe.png";
 import StarRating from "../Rating/Rating";
+import AdditionalSurveyConfirmationScreen from "../AdditionalSurveyConfirmationScreen";
 import { Button, RadioButton } from "@ama-pt/agora-design-system";
 import "./AdditionalSurveyForm.css";
 
@@ -12,8 +13,7 @@ const AdditionalSurveyForm = () => {
   const [authorityResponsibleAvailable, setAuthorityResponsibleAvailable] = useState<string[]>([]);
   const [legislationReferences, setLegislationReferences] = useState<string[]>([]);
   const [informationInEnglish, setInformationInEnglish] = useState<string[]>([]);
-
-  
+  const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
 
   const handleRatingChange1 = (newRating: number) => {
     setRating1(newRating);
@@ -27,7 +27,6 @@ const AdditionalSurveyForm = () => {
     setRating3(newRating);
   };
 
-  
   const handleLastUpdateAvailable = (e: ChangeEvent<HTMLInputElement>) => {
     setLastUpdateAvailable([e.target.value]);
   };
@@ -44,9 +43,7 @@ const AdditionalSurveyForm = () => {
     setInformationInEnglish([e.target.value]);
   };
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
-    event
-  ) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
     const formData = {
       rating1,
@@ -69,7 +66,7 @@ const AdditionalSurveyForm = () => {
 
       if (response.ok) {
         console.log("Formulário adicional 'Your Europe' enviado com sucesso!");
-        // setShowConfirmation(true);
+        setShowConfirmation(true);
       } else {
         console.error("Erro ao enviar o formulário:", response.statusText);
       }
@@ -78,8 +75,13 @@ const AdditionalSurveyForm = () => {
     }
   };
 
+  if (showConfirmation) {
+    return <AdditionalSurveyConfirmationScreen />;
+  }
+
   return (
     <div className="additional-survey-container">
+      <div className="additional-survey-wrapper">
         <h1 className="additional-survey-title">
           Por favor, diga-nos mais sobre a informação que encontrou.
         </h1>
@@ -167,7 +169,7 @@ const AdditionalSurveyForm = () => {
           </label>
         </div>
 
-        <div className="radio-group">
+        <div className="radio-group radio-group-spacer">
           <p>
             O nome da autoridade responsável pela informação está disponível na
             página?
@@ -207,7 +209,7 @@ const AdditionalSurveyForm = () => {
           </label>
         </div>
 
-        <div className="radio-group">
+        <div className="radio-group radio-group-spacer">
           <p>Há referências a legislação?</p>
           <label className="radio">
             Sim
@@ -244,7 +246,7 @@ const AdditionalSurveyForm = () => {
           </label>
         </div>
 
-        <div className="radio-group">
+        <div className="radio-group radio-group-spacer">
           <p>A informação está disponível em inglês?</p>
           <label className="radio">
             Sim
@@ -282,7 +284,9 @@ const AdditionalSurveyForm = () => {
         </div>
 
         <Button
-          onClick={(handleSubmit as unknown) as MouseEventHandler<HTMLButtonElement>}
+          onClick={
+            handleSubmit as unknown as MouseEventHandler<HTMLButtonElement>
+          }
           className="submit-button"
           type="submit"
           hasIcon
@@ -291,8 +295,9 @@ const AdditionalSurveyForm = () => {
         >
           Enviar avaliação
         </Button>
+      </div>
     </div>
   );
 };
 
-export default AdditionalSurveyForm
+export default AdditionalSurveyForm;

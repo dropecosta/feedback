@@ -1,0 +1,3 @@
+import AdditionalSurveyConfirmationScreen from './AdditionalSurveyConfirmationScreen';
+
+export default AdditionalSurveyConfirmationScreen

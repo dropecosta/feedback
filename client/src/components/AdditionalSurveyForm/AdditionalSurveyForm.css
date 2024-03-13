@@ -1,28 +1,40 @@
 .additional-survey-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    max-width: 592px;
-    margin: 0 auto;
+  width: 100%;
+  background: var(--High-Contrast-White, #fff);
+  padding-top: 64px;
+}
+
+.additional-survey-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  max-width: 592px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .additional-survey-title {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px;
-    margin-bottom: 16px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 16px;
 }
 
 .logo-your-europe {
-    margin-top: 32px;
-    margin-bottom: 58px;
-    width: 112px;
-    height: 32px;
+  margin-top: 32px;
+  margin-bottom: 58px;
+  width: 112px;
+  height: 32px;
 }
 
-.rating, .radio-group {
-    margin-bottom: 32px;
+.rating,
+.radio-group {
+  margin-bottom: 32px;
 }
 
+.submit-button {
+  margin-top: 58px;
+  margin-bottom: 128px;
+}

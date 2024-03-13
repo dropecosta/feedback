@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import StarFilled from '../../assets/star-filled.svg';
+import StarEmpty from '../../assets/star-empty.svg';
 
 interface StarRatingProps {
   rating: number;
@@ -38,23 +40,69 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, onChange }) => {
     }
   };
 
+  // return (
+  //   <div>
+  //     {[...Array(5)].map((_, index) => {
+  //       const starNumber = index + 1;
+  //       return (
+  //         <span
+  //         className='star'
+  //           key={index}
+  //           style={{ cursor: "pointer" }}
+  //           onMouseOver={() => handleMouseOver(starNumber)}
+  //           onMouseOut={handleMouseOut}
+  //           onClick={() => handleClick(starNumber)}
+  //         >
+  //           {starNumber <= (hoverRating || rating) ? "★" : "☆"}
+  //         </span>
+  //       );
+  //     })}
+  //     <div className="rating-legend">{getRatingText(rating)}</div>
+  //   </div>
+  // );
+
+  // return (
+  //   <>
+  //     {[...Array(5)].map((_, index) => {
+  //       const starNumber = index + 1;
+  //       return (
+  //         <img
+  //           className='star'
+  //           key={index}
+  //           style={{ cursor: "pointer" }}
+  //           onMouseOver={() => handleMouseOver(starNumber)}
+  //           onMouseOut={handleMouseOut}
+  //           onClick={() => handleClick(starNumber)}
+  //           src={starNumber <= (hoverRating || rating) ? StarFilled : StarEmpty}
+  //           alt="star"
+  //         />
+  //       );
+  //     })}
+  //     <div className="rating-legend">
+  //       <div>{getRatingText(rating)}</div>
+  //     </div>
+  //   </>
+  // );
+
   return (
-    <div>
-      {[...Array(5)].map((_, index) => {
-        const starNumber = index + 1;
-        return (
-          <span
-          className='star'
-            key={index}
-            style={{ cursor: "pointer" }}
-            onMouseOver={() => handleMouseOver(starNumber)}
-            onMouseOut={handleMouseOut}
-            onClick={() => handleClick(starNumber)}
-          >
-            {starNumber <= (hoverRating || rating) ? "★" : "☆"}
-          </span>
-        );
-      })}
+    <div className="rating">
+      <div className="rating-content">
+        {[...Array(5)].map((_, index) => {
+          const starNumber = index + 1;
+          return (
+            <img
+              className='star'
+              key={index}
+              style={{ cursor: "pointer" }}
+              onMouseOver={() => handleMouseOver(starNumber)}
+              onMouseOut={handleMouseOut}
+              onClick={() => handleClick(starNumber)}
+              src={starNumber <= (hoverRating || rating) ? StarFilled : StarEmpty}
+              alt="star"
+            />
+          );
+        })}
+      </div>
       <div className="rating-legend">{getRatingText(rating)}</div>
     </div>
   );

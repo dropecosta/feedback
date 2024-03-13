@@ -3,45 +3,54 @@
   margin-bottom: 8px;
 }
 
+.feedback-confirmation-container {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: var(--Primary-100, #F2F6FF);
+  padding: 64px 112px;
+}
+
 .feedback-confirmation-title {
-    font-family: "Noto Sans";
+  font-family: "Noto Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+
+  span {
+    font-weight: 700;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 36px;
-  
-    span {
-      font-weight: 700;
-      font-size: 24px;
-    }
   }
+}
 
-  .feedback-confirmation-subtitle {
-    margin-bottom: 32px;
+.feedback-confirmation-subtitle {
+  margin-bottom: 32px;
+}
+
+.feedback-confirmation-description {
+  max-width: 586px;
+}
+
+.feedback-confirmation-button {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 230px;
+
+  .agora-btn-link-primary {
+    padding-left: 0;
   }
+}
 
-  .feedback-confirmation-description {
-    max-width: 586px;
-  }
+.your-europe {
+  width: 350px;
+}
 
-    .feedback-confirmation-button {
-        margin-top: 24px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 230px;
-
-        .agora-btn-link-primary {
-            padding-left: 0;
-        }
-    }
-
-    .your-europe {
-        width: 350px;
-    }
-
-    .logo-your-europe {
-        width: 168px;
-        height: 49px;
-        margin-bottom: 64px;
-    }
+.logo-your-europe {
+  width: 168px;
+  height: 49px;
+  margin-bottom: 64px;
+}
