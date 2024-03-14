@@ -1,11 +1,11 @@
 import React, { ChangeEvent, MouseEventHandler, useState } from "react";
 import YourEurope from "../../assets/your-europe.png";
 import StarRating from "../Rating/Rating";
-import AdditionalSurveyConfirmationScreen from "../AdditionalSurveyConfirmationScreen";
+import AdditionalSurveyConfirmation from "../AdditionalSurveyConfirmation";
 import { Button, RadioButton } from "@ama-pt/agora-design-system";
-import "./AdditionalSurveyForm.css";
+import "./AdditionalSurvey.css";
 
-const AdditionalSurveyForm = () => {
+const AdditionalSurvey = () => {
   const [rating1, setRating1] = useState(0);
   const [rating2, setRating2] = useState(0);
   const [rating3, setRating3] = useState(0);
@@ -76,7 +76,7 @@ const AdditionalSurveyForm = () => {
   };
 
   if (showConfirmation) {
-    return <AdditionalSurveyConfirmationScreen />;
+    return <AdditionalSurveyConfirmation />;
   }
 
   const buttonArgs = {
@@ -311,4 +311,4 @@ const AdditionalSurveyForm = () => {
   );
 };
 
-export default AdditionalSurveyForm;
+export default AdditionalSurvey

@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import YourEurope from "../../assets/your-europe.png";
-import "./FeedbackSubmissionConfirmation.css";
+import "./FeedbackConfirmation.css";
 import { Button, Icon, Scribbles } from "@ama-pt/agora-design-system";
-import AdditionalSurveyForm from "../AdditionalSurveyForm";
+import AdditionalSurvey from "../AdditionalSurvey";
 
-export default function FeedbackSubmissionConfirmation() {
+export default function FeedbackConfirmation() {
   const [showAdditionalForm, setShowAdditionalForm] = useState(false);
   
-  // const yourEurope = false;
   const yourEurope = true;
 
   if (showAdditionalForm) {
-    return <AdditionalSurveyForm />;
+    return <AdditionalSurvey />;
   }
 
   return (
@@ -35,7 +34,7 @@ export default function FeedbackSubmissionConfirmation() {
       {yourEurope && (
         <>
           {showAdditionalForm ? (
-            <AdditionalSurveyForm />
+            <AdditionalSurvey />
           ) : (
             <>
               <p className="feedback-confirmation-description">

@@ -1,5 +1,5 @@
 import { Button, Icon } from "@ama-pt/agora-design-system";
-import "./AdditionalSurveyConfirmationScreen.css";
+import "./AdditionalSurveyConfirmation.css";
 
 const buttonArgs = {
   children: 'Fechar',
@@ -9,7 +9,7 @@ const buttonArgs = {
   onClick: () => window.location.reload()
 };
 
-const AdditionalSurveyConfirmationScreen = () => {
+const AdditionalSurveyConfirmation = () => {
   return (
     <div className="additional-confirmation-container">
       <div className="button-close">
@@ -40,4 +40,4 @@ const AdditionalSurveyConfirmationScreen = () => {
   );
 };
 
-export default AdditionalSurveyConfirmationScreen;
+export default AdditionalSurveyConfirmation

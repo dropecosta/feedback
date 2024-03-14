@@ -6,96 +6,6 @@
 
 }
 
-.feedback-form {
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: var(--Primary-100, #F2F6FF);
-  padding: 64px 112px;
-}
-
-.feedback-content {
-  display: flex;
-  max-width: 1440px;
-  align-items: flex-start;
-  gap: 104px;
-
-  .feedback-heading {
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-      font-family: "Noto Sans";
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-    }
-
-    p {
-      font-family: "Noto Sans";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      margin: 8px 0 0 0;
-      line-height: 28px;
-    }
-  }
-
-  .feedback-buttons {
-    display: flex;
-    gap: 32px;
-  }
-
-  .success-button-clicked {
-    background-color: #00724C;
-    border-color: #00724C;
-    color: white;
-
-    svg {
-      fill: white;
-    }
-  }
-
-  .danger-button-clicked {
-    background-color: #86131D;
-    border-color: #86131D;
-    color: white;
-
-    svg {
-      fill: white;
-    }
-  }
-
-  .agora-btn-outline-success {
-    &:hover {
-      background-color: #00724C;
-      border-color: #00724C;
-    }
-  }
-}
-
-.accordion {
-  width: 100%;
-  text-align: left;
-  font-size: 18px;
-  transition: background-color 0.6s ease;
-  border: 0;
-  background: var(--Primary-100, #F2F6FF) !important;
-}
-
-.accordion-content {
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease-out;
-  padding-top: 64px;
-}
-
-.accordion-content.active {
-  max-height: 100%;
-}
-
 .label {
   margin-bottom: 10px;
 }
@@ -121,7 +31,6 @@
 .rating {
   display: flex;
   flex-direction: column;
-  //margin-top: 32px;
 }
 
 .rating-spacer {
